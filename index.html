@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raam Charran</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --ink: #18181b;
+      --muted: #71717a;
+      --line: #e4e4e7;
+      --accent: #18181b;
+      --sans: 'Inter', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 96px 32px 120px;
+    }
+
+    /* ---------- header ---------- */
+    header.intro {
+      margin-bottom: 72px;
+    }
+    header.intro h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    header.intro p.tag {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+    header.intro p.bio {
+      font-size: 16px;
+      color: var(--ink);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* ---------- section ---------- */
+    section {
+      margin-top: 56px;
+    }
+    h2 {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 24px;
+    }
+
+    /* ---------- list rows ---------- */
+    .row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .row:last-child { border-bottom: 1px solid var(--line); }
+    .row .meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .row .body {
+      font-size: 15px;
+    }
+    .row .body .title {
+      color: var(--ink);
+    }
+    .row .body .sub {
+      color: var(--muted);
+      margin-left: 6px;
+    }
+    .row .body .note {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ---------- works ---------- */
+    .work {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      align-items: baseline;
+      transition: padding 200ms ease;
+    }
+    .work:last-child { border-bottom: 1px solid var(--line); }
+    .work:hover { padding-left: 8px; }
+    .work .name {
+      font-size: 15px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+    .work .desc {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-left: 8px;
+    }
+    .work .link {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+      transition: color 200ms ease;
+    }
+    .work:hover .link { color: var(--ink); }
+    .work .link::after {
+      content: ' →';
+      display: inline-block;
+      transition: transform 200ms ease;
+    }
+    .work:hover .link::after { transform: translateX(3px); }
+
+    /* ---------- contact ---------- */
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+    }
+    .contact a {
+      font-size: 15px;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color 200ms ease;
+    }
+    .contact a:hover { border-bottom-color: var(--ink); }
+
+    /* ---------- footer ---------- */
+    footer {
+      margin-top: 96px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 560px) {
+      .page { padding: 64px 24px 80px; }
+      .row { grid-template-columns: 80px 1fr; gap: 12px; }
+      .work { grid-template-columns: 1fr; }
+      .work .link { font-size: 11px; }
+      .work .desc { display: block; margin-left: 0; margin-top: 2px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="intro">
+      <h1>Raam Charran</h1>
+      <p class="tag">Senior Product Manager · PayPal</p>
+      <p class="bio">
+        I build credit and fintech products at the intersection of risk, data,
+        and AI, from large-scale credit platforms at PayPal to mobile money in Burundi.
+        MBA from Michigan, engineer by training; always building something on
+        the side.
+      </p>
+    </header>
+
+    <section>
+      <h2>Works</h2>
+      <a class="work" href="https://github.com/raamcharran/epub-summarizer-multiprovider" target="_blank" rel="noopener">
+        <div>
+          <span class="name">Book Summarizer</span>
+          <span class="desc">Distills long-form non-fiction into structured notes.</span>
+        </div>
+        <span class="link">GitHub</span>
+      </a>
+      <a class="work" href="https://github.com/raamcharran/podcast-summarizer" target="_blank" rel="noopener">
+        <div>
+          <span class="name">Podcast Summarizer</span>
+          <span class="desc">Transcribes and summarizes podcast episodes.</span>
+        </div>
+        <span class="link">GitHub</span>
+      </a>
+      <a class="work" href="https://github.com/raamcharran/piano-tutor" target="_blank" rel="noopener">
+        <div>
+          <span class="name">Piano Tutor</span>
+          <span class="desc">Listens as you practice and gives feedback.</span>
+        </div>
+        <span class="link">GitHub</span>
+      </a>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="row">
+        <div class="meta">2024 –</div>
+        <div class="body">
+          <span class="title">PayPal</span>
+          <span class="sub">Senior Product Manager, Credit Risk</span>
+          <span class="note">Consumer credit risk, BNPL, Credit Cards</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">2023</div>
+        <div class="body">
+          <span class="title">Ripple</span>
+          <span class="sub">Product Manager, Intern</span>
+          <span class="note">Digital assets liquidity</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">2022</div>
+        <div class="body">
+          <span class="title">Prospa</span>
+          <span class="sub">Product Manager</span>
+          <span class="note">Digital financing for small business owners</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">2019 – 2022</div>
+        <div class="body">
+          <span class="title">One Acre Fund</span>
+          <span class="sub">Senior Program Associate</span>
+          <span class="note">Mobile money, digital marketplace for 150K farmers</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">2016 – 2019</div>
+        <div class="body">
+          <span class="title">J.P. Morgan</span>
+          <span class="sub">Analyst, Investment Banking</span>
+          <span class="note">IPOs, M&amp;A, convertible bonds, India &amp; APAC</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="row">
+        <div class="meta">2022 – 2024</div>
+        <div class="body">
+          <span class="title">University of Michigan</span>
+          <span class="sub">MBA, Ross School of Business</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">2011 – 2016</div>
+        <div class="body">
+          <span class="title">BITS Pilani</span>
+          <span class="sub">B.S. Electronics Engineering &amp; Economics</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Elsewhere</h2>
+      <div class="contact">
+        <a href="mailto:raam@umich.edu">raam@umich.edu</a>
+        <a href="https://www.linkedin.com/in/raam-charran/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/raamcharran" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Raam Charran
+    </footer>
+
+  </main>
+</body>
+</html>
