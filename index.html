@@ -136,15 +136,22 @@
     /* ---------- works ---------- */
     .work {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 16px;
-      padding: 16px 0;
+      grid-template-columns: 1fr 164px;
+      gap: 24px;
+      padding: 20px 0;
       border-top: 1px solid var(--line);
-      align-items: baseline;
+      align-items: center;
       transition: padding 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .work:last-child { border-bottom: 1px solid var(--line); }
     .work:hover { padding-left: 10px; }
+
+    .work-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
 
     .work .name {
       font-size: 15px;
@@ -156,7 +163,6 @@
       font-size: 14px;
       font-weight: 400;
       color: var(--muted);
-      margin-left: 8px;
     }
 
     .work .link {
@@ -164,6 +170,8 @@
       font-size: 11px;
       color: var(--muted);
       transition: color 220ms ease;
+      white-space: nowrap;
+      margin-left: 12px;
     }
     .work:hover .link { color: var(--accent); }
 
@@ -173,6 +181,21 @@
       transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
     }
     .work:hover .link::after { transform: translateX(4px); }
+
+    .work-preview {
+      display: block;
+      width: 100%;
+      height: 92px;
+      object-fit: cover;
+      object-position: top left;
+      border-radius: 4px;
+      border: 1px solid var(--line);
+      transition: opacity 220ms ease, border-color 220ms ease;
+    }
+    .work:hover .work-preview {
+      opacity: 0.82;
+      border-color: var(--muted);
+    }
 
     /* ---------- contact ---------- */
     .contact {
@@ -210,7 +233,7 @@
       .row { grid-template-columns: 80px 1fr; gap: 12px; }
       .work { grid-template-columns: 1fr; }
       .work .link { font-size: 11px; }
-      .work .desc { display: block; margin-left: 0; margin-top: 2px; }
+      .work-preview { display: none; }
     }
   </style>
 </head>
@@ -231,25 +254,34 @@
     <section>
       <h2>Works</h2>
       <a class="work" href="https://github.com/raamcharran/epub-summarizer-multiprovider" target="_blank" rel="noopener">
-        <div>
-          <span class="name">Book Summarizer</span>
+        <div class="work-body">
+          <div class="work-header">
+            <span class="name">Book Summarizer</span>
+            <span class="link">GitHub</span>
+          </div>
           <span class="desc">Distills long-form non-fiction into structured notes.</span>
         </div>
-        <span class="link">GitHub</span>
+        <img class="work-preview" src="previews/book-thumb.png" alt="Book Summarizer output" />
       </a>
       <a class="work" href="https://github.com/raamcharran/podcast-summarizer" target="_blank" rel="noopener">
-        <div>
-          <span class="name">Podcast Summarizer</span>
+        <div class="work-body">
+          <div class="work-header">
+            <span class="name">Podcast Summarizer</span>
+            <span class="link">GitHub</span>
+          </div>
           <span class="desc">Transcribes and summarizes podcast episodes.</span>
         </div>
-        <span class="link">GitHub</span>
+        <img class="work-preview" src="previews/podcast-thumb.png" alt="Podcast Summarizer output" />
       </a>
       <a class="work" href="https://github.com/raamcharran/piano-tutor" target="_blank" rel="noopener">
-        <div>
-          <span class="name">Piano Tutor</span>
+        <div class="work-body">
+          <div class="work-header">
+            <span class="name">Piano Tutor</span>
+            <span class="link">GitHub</span>
+          </div>
           <span class="desc">Listens as you practice and gives feedback.</span>
         </div>
-        <span class="link">GitHub</span>
+        <img class="work-preview" src="previews/piano-thumb.png" alt="Piano Tutor output" />
       </a>
     </section>
 
